@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<header>
+    <div>
+        <h1 class="title">Mandelbrot</h1>
+    </div>
+</header> 
+<body>
+    <h2>Générer votre mandelbrot :</h2>
+        <div>
+            <label for="max_iteration" style="display: block;width: 200px;float: left;">Nombre d'itération :</label> <input type="range" min="1" max="500" value="30" step="1" id="max_iteration" name="range" oninput="document.getElementById('range').textContent=value"> value = <span id="range">30</span><br />
+            <label for="start_position_x" style="display: block;width: 200px;float: left;">Position de départ en x :</label><input type="number" value="-1.5" id="start_position_x"><br />
+            <label for="start_position_y" style="display: block;width: 200px;float: left;">Position de départ en y :</label><input type="number" value="1.5" id="start_position_y"><br />
+            <label for="quantize_length" style="display: block;width: 200px;float: left;">Longueur à parcourir :</label><input type="number" value="3" id="quantize_length"> <br /><br />
+            <button id="validation" >Générer votre Mandelbrot</button>
+        </div> 
+        <br/>   
+        <div>
+        <img id="mandelbrot" src="/static/images_loaded/mandelbrot_base.png" >    
+        </div>
+    
+    <script>
+        document.getElementById("validation").addEventListener("click", myFunction); 
+        function myFunction(){
+            const getImage = async() => {
+                document.getElementById("mandelbrot").src = "/static/images/loading.gif";
+                
+                let max_iteration = document.getElementById("max_iteration").value;
+                console.log(max_iteration);
+                let start_position_x = document.getElementById("start_position_x").value;
+                console.log(start_position_x);
+                let start_position_y = document.getElementById("start_position_y").value;
+                console.log(start_position_y);
+                let quantize_length = document.getElementById("quantize_length").value;
+                console.log(quantize_length);
+                var xhttp = new XMLHttpRequest();
+                
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                        var timestamp = new Date().getTime();
+                        document.getElementById("mandelbrot").src = "/static/images_loaded/mandelbrot_wanted.png?t="+timestamp;
+                        return "done"
+                        }
+                };
+                
+                xhttp.open("get", 
+                        "mandelbrot?max_iteration="+max_iteration
+                        +"&start_position_x="+start_position_x
+                        +"&start_position_y="+start_position_y
+                        +"&quantize_length="+quantize_length, true);
+                xhttp.send();
+            };
+
+            getImage().then(data => {
+            })
+        };       
+    </script>
+</body>
