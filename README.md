@@ -23,7 +23,7 @@ Néanmoins afin de bien comprendre le processus voici un schéma le décrivant :
 Chacun des workers est un serveur go contenu sur un docker et contient l'API. Nous les avons générer via un docker-compose utilisant l'image de go.<br />
 ![image](https://user-images.githubusercontent.com/75576766/210776881-2a7781f4-8e6a-4a8c-a552-ba32d102ce05.png)
 
-Chacun des workers n'utilise qu'un seul coeur de l'ordinateur, on leur a attribué les coeurs dans le docker-compose avec le cpuset:
+Chacun des workers n'utilise qu'un seul coeur de l'ordinateur, on leur a attribué les coeurs dans le docker-compose avec le cpuset:<br/>
 ![image](https://user-images.githubusercontent.com/75576766/210787225-2c45037d-b78b-4a61-91d1-13d5575038c2.png)
 
 L'API ne contient qu'un seul appel : <br />
