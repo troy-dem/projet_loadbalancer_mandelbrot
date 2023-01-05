@@ -32,6 +32,8 @@ Pour traiter la requête le serveur passe va utiliser plusieurs fonctions :
 - mandelbrot(max_iteration, c_real, c_imaginary float64): ( utilisée par png_generator ) Celle ci va nous donner le nombre d'itération à partir du quel on sait que l'élément ne fait pas partie de l'ensemble de mandelbrot. 
 - colorize(iteration, max_iteration float64, colormap [][3]int) : ( utilisée par png generator ) Celle-ci va nous renvoyer la couleur que l'on doit donner à un pixel selon son nombre d'iteration. 
 
+Le code ayant servi a générer les docker ainsi que le code serveur est retoruvable ici : https://github.com/Tateuf/projet_loadbalancer_mandelbrot/tree/main/backend%20docker-compose%20%2B%20worker
+
 ### Partie Frontend :
 
 
