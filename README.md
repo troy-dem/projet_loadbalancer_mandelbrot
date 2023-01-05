@@ -15,7 +15,9 @@ C'est cette partie qui va recevoir la multitude de requêtes venant du frontend 
 
 ## Stratégie de répartion du loadbalancer :
 
-Nous utilisons un loadbalancing least connections, c'est à dire que le loadbalancer va rediriger la requêtes vers le serveur ayant le moins de connexion active. Il est très simple à mettre en place sur nginx, il suffit en effet de rajouter une seule ligne dans le fichier de configuration afin de terminer la méthode de loadbalancing. ![Sans titre](https://user-images.githubusercontent.com/75576766/210772008-9197432c-1f45-4ab5-bc14-8d36af537035.png)
+Nous utilisons un loadbalancing least connections, c'est à dire que le loadbalancer va rediriger la requêtes vers le serveur ayant le moins de connexion active. Il est très simple à mettre en place sur nginx, il suffit en effet de rajouter une seule ligne dans le fichier de configuration afin de terminer la méthode de loadbalancing.
+<br />
+![Sans titre](https://user-images.githubusercontent.com/75576766/210772008-9197432c-1f45-4ab5-bc14-8d36af537035.png)
 
 D'autres méthodes sont disponibles : 
 - Round Robin : dans laquelle les requêtes sont distribués de manière équivalentes entre les serveurs
