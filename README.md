@@ -35,7 +35,13 @@ Pour traiter la requête le serveur passe va utiliser plusieurs fonctions :
 Le code ayant servi a générer les docker ainsi que le code serveur est retoruvable ici : https://github.com/Tateuf/projet_loadbalancer_mandelbrot/tree/main/backend%20docker-compose%20%2B%20worker
 
 ### Partie Frontend :
+Nous avons décidé d'utilisé Flask pour créer notre serveur. 
+Voici notre interface de base qui est en html, nous avaons rajouter un peu de js afin de rendre celle-ci plus esthétique : <br />
+![image](https://user-images.githubusercontent.com/75576766/210783174-b3f90217-7240-49f1-b0bf-b6597562e11e.png)
 
+Lorsque nous appuyons sur le boutton, cela va lancer un script js qui fait une une requête http à notre serveur "backend" du frontend. Celui-ci va subdiviser la requête en une centaine de sous requêtes qu'il va transmettre au loadbalancer de manière asyncrhone. Lorsqu'il aura récupérer chacune des réponses, il va reconstruire l'image et nous pourrons l'afficher dans l'interface utilisateur. 
+
+Lien vers le code frontend : 
 
 ## Stratégie de répartion du loadbalancer :
 
