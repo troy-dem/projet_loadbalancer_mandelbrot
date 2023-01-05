@@ -60,4 +60,4 @@ https://github.com/Tateuf/projet_loadbalancer_mandelbrot/tree/main/conf
 Pour plus d'information sur les différentes configurations : 
 https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 
-
+## Bibliothèques utilisées et description 
