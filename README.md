@@ -1,5 +1,5 @@
 # Projet_loadbalancer_mandelbrot
-Création d'une page web de génération de figure de mandelbrot à l'aide de loadbalancing(nginx)
+Création d'une page web de génération de figure de mandelbrot à l'aide de loadbalancing(nginx) par Louis Demarcin 18090 et Logan Noel 18003
 ## Ce projet se compose de différentes parties:
 ### Une partie Backend : 
 Pour notre backend, nous avaons décidé d'utilisé docker afin de représenter différents serveurs qui se partagerait les différents travaux. Nous retrouvons donc dans cette partie : 
