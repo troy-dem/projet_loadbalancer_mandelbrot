@@ -67,4 +67,13 @@ https://github.com/Tateuf/projet_loadbalancer_mandelbrot/tree/main/conf
 Pour plus d'information sur les différentes configurations : 
 https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 
-## Bibliothèques utilisées et description 
+## Bibliothèques utilisées et description :
+
+### Partie frontend :
+- flask qui est un framework opensource de dévellopement web en python 
+- aiohttp et asyncio qui nous permettent d'effectuer des requêtes aynschrones en python 
+- pillow qui nous permet de faire du traitement d'image 
+### Partie backend : 
+- net/http qui nous permet de créer un serveur http en go 
+- image qui nous permet de faire du traitement d'image en go
+- math pour effectuer des opérations mathématique en go
