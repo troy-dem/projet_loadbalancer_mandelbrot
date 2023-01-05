@@ -54,6 +54,9 @@ D'autres méthodes sont disponibles :
 
 La méthode least connections nous semblait la plus approprié dans notre situation car les serveurs pourraient ne pas être exclusivement réserver aux traitements mandelbrot. 
 
+Pour retrouver la configuration que l'on a faite :
+https://github.com/Tateuf/projet_loadbalancer_mandelbrot/tree/main/conf
+
 Pour plus d'information sur les différentes configurations : 
 https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 
