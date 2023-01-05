@@ -8,7 +8,8 @@ Pour notre backend, nous avaons décidé d'utilisé docker afin de représenter 
 ### Une partie frontend : 
 Celle-ci a été réalisée en python à l'aide de Flask. C'est dans cette partie que le client va pouvoir choisir la configuration de son mandelbrot et la générer. Afin de générer le résultat final le serveur de la partie frontend va séparer la requête initiales en une multitude de sous requêtes qu'il va envoyer de manière asynchrone à un serveur. Une fois qu'il aura obtenu toutes les réponses, le serveur réassemblera l'image. 
 ### La partie loadbalancing : 
-C'est cette partie qui va recevoir la multitude de requêtes venant du frontend et va les loadbalancer au travers des différents serveurs disponibles. Nous avons chois de travailler avec un loadbalancer serveur Nginx. Nous avons ajouter sur ce github la configuration que l'on avait faite pour celui-ci afin. 
+C'est cette partie qui va recevoir la multitude de requêtes venant du frontend et va les loadbalancer au travers des différents serveurs disponibles. Nous avons chois de travailler avec un loadbalancer serveur :  Nginx. Nous avons ajouter sur ce github la configuration que l'on a faite pour lui. 
+Nous utilisons un loadbalancing least connections, c'est à dire que le loadbalancer va rediriger la requêtes vers le serveur ayant le moins de connexion active. 
 
+## Description de l'API du serveur
 
-Least Connections – A request is sent to the server with the least number of active connections, again with server weights taken into consideration:
