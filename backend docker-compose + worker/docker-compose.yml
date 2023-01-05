@@ -2,21 +2,25 @@ version: '3'
 
 services:
   worker:
+    cpuset: "0"
     build: ./worker
     ports:
       - "8081:8080"
 
   worker_2:
+    cpuset: "1"
     build: ./worker
     ports:
       - "8082:8080"
 
   worker_3:
+    cpuset: "2"
     build: ./worker
     ports:
       - "8083:8080"
 
   worker_4:
+    cpuset: "3"
     build: ./worker
     ports:
       - "8084:8080"
