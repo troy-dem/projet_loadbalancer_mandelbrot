@@ -19,12 +19,20 @@ Néanmoins afin de bien comprendre le processus voici un schéma le décrivant :
 <br />
 ![description](https://user-images.githubusercontent.com/75576766/210775222-1458784d-ffd4-4177-bbab-403f847743a2.png)
 
-Chacun des workers est un serveur go contenu sur un docker et contient l'API. <br />
+### Partie Backend:
+Chacun des workers est un serveur go contenu sur un docker et contient l'API. Nous les avons générer via un docker-compose utilisant l'image de go. <br />
 ![image](https://user-images.githubusercontent.com/75576766/210776881-2a7781f4-8e6a-4a8c-a552-ba32d102ce05.png)
 
 L'API ne contient qu'un seul appel : <br />
 
 ![image](https://user-images.githubusercontent.com/75576766/210778790-5a722d7f-6bde-436f-ac76-ee8a47ddd98c.png)
+
+Pour traiter la requête le serveur passe va utiliser plusieurs fonctions :
+- png_generator(resolution_x, resolution_y, start_position_x, start_position_y, quantize_length, max_iteration float64, colormap [][3]int, wg sync.WaitGroup) : qui va nous permettre de créer l'image du mandelbrot sous format png.
+- mandelbrot(max_iteration, c_real, c_imaginary float64): ( utilisée par png_generator ) Celle ci va nous donner le nombre d'itération à partir du quel on sait que l'élément ne fait pas partie de l'ensemble de mandelbrot. 
+- colorize(iteration, max_iteration float64, colormap [][3]int) : ( utilisée par png generator ) Celle-ci va nous renvoyer la couleur que l'on doit donner à un pixel selon son nombre d'iteration. 
+
+### Partie Frontend :
 
 
 ## Stratégie de répartion du loadbalancer :
