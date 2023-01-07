@@ -28,7 +28,7 @@ Chacun des workers n'utilise qu'un seul coeur de l'ordinateur, on leur a attribu
 
 L'API ne contient qu'un seul appel : <br />
 
-![image](https://user-images.githubusercontent.com/75576766/210778790-5a722d7f-6bde-436f-ac76-ee8a47ddd98c.png)
+![description](https://user-images.githubusercontent.com/75576766/211143535-72d0dff4-8478-4f80-869b-5ea9549384dd.png)
 
 Pour traiter la requête le serveur passe va utiliser plusieurs fonctions :
 - png_generator(resolution_x, resolution_y, start_position_x, start_position_y, quantize_length, max_iteration float64, colormap [][3]int, wg sync.WaitGroup) : qui va nous permettre de créer l'image du mandelbrot sous format png.
