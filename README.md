@@ -60,7 +60,7 @@ Nous utilisons une stratégie de loadbalancing least connections, c'est à dire 
 
 D'autres méthodes sont disponibles : 
 - Round Robin : dans laquelle les requêtes sont distribués de manière équivalentes entre les serveurs
-- IP hash : on détermine le serveur d'arriver de la requête via l'addresse IP du client.
+- IP hash : on détermine le serveur d'arrivé de la requête via l'addresse IP du client.
 
 La méthode least connections nous semblait la plus approprié dans notre situation car les serveurs pourraient ne pas être exclusivement réserver aux traitements mandelbrot. 
 
